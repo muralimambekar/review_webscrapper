@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+<p style="text-align:center;"><b>Git Hub Link: https://github.com/muralimambekar/review_webscrapper  </b></P>
+<p>
+    <script>
+    function goBack()
+    {
+      window.history.back()
+    }
+    </script>
+    <button onclick="goBack()">Go Back</button>
+
+    <a href="getcsv"download>
+        <button type="button" class="btn btn-indigo btn-lg" style="float:right;"> Dolwnload</button>
+    </a>
+</p>
+  <div class="table-users">
+   <div class="header">Reviews</div>
+    
+
+   <table cellspacing="0">
+      <tr>
+         <th>Product</th>
+         <th>Name</th>
+         <th>Rating</th>
+         <th>Comment Heading</th>
+         <th width="230">Comments</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['Product']}}</td>
+         <td>{{review['Name']}}</td>
+         <td>{{review['Rating']}}</td>
+         <td>{{review['CommentHead']}}</td>
+         <td>{{review['Comment']}} </td>
+       {% endfor %}
+   </table>
+</div>
+murali ambekar
+</body>
+
+</html>

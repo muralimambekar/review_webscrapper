@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<p style="text-align:center;"><b>Git Hub Link: https://github.com/muralimambekar/review_webscrapper  </b></P>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Search Reviews </h1>
+
+    <div class="form">
+        <form action="/r" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
